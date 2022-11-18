@@ -19,7 +19,7 @@ FinalBoss is coded in the Django Python Framework, Javascript, HTML and CSS.
 
 The user's collection is stored in an SQLite database and modified directly by Django when creating, updating or deleting titles.
 
-Research functionality will be provided through API calls to RAWG Video Games Database.
+Research functionality is provided through API calls to RAWG Video Games Database.
 
 
 
