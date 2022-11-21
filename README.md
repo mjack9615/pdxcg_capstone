@@ -6,7 +6,7 @@ Possessing a large video game collection is fun but also potentially challenging
 
 ## Features
 
-When a collection grows to a massive size it can become very difficult to keep track of specific information such as how many copies of a title are owned or which platform a particular game belongs to. Being able to prioritize which games should be played next is also important so that available gaming time isn't wasted and highly rated titles aren't being missed. Additionally, staying on top of newly released games is vital to keeping a collection current and complete. In order to facilitate the necessary level of organization, FinalBoss allows the user to:
+When a collection grows to a massive size it can become very difficult to keep track of specific information such as how many copies of a title are owned or which platform a particular game belongs to. Being able to prioritize which games should be played next is also important so that available gaming time isn't wasted and highly rated titles aren't missed. Additionally, staying on top of newly released games is vital to keeping a collection current and complete. In order to facilitate the necessary level of organization, FinalBoss allows the user to:
 
 - Create a personal database of titles with records stored by name, platform and review score (if available)
 - Interact with the database through creation, modification or deletion of individual records
@@ -19,7 +19,7 @@ When a collection grows to a massive size it can become very difficult to keep t
 
 FinalBoss is coded in the Django Python Framework, Vue.js, HTML and CSS.
 
-Access to the features of FinalBoss is only provided to authenticated users. Account creation consists of the selection of a username and password.
+Access to the features of FinalBoss is only provided for authenticated users. Account creation consists of the selection of a username and password.
 
 The user's collection is stored in an SQLite database and modified directly by Django when creating, updating or deleting records.
 
