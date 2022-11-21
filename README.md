@@ -1,25 +1,33 @@
 
-# FinalBoss Game Collection & Research Tool
+# FinalBoss CRT
 
-FinalBoss allows the user to manage a personal video game collection as well as conduct online searches for new titles.
+Possessing a large video game collection is fun but also potentially challenging and occasionally frustrating. FinalBoss CRT (Collection & Research Tool) is here to provide the game collector with transparency and a path toward better collection utilization.
+
 
 ## Features
 
-- List highest rated titles
-- Filter collection by keyword, platform and score
-- Manage collection database
-- Research titles online
-- Display screenshots
-- Watch trailers
+When a collection grows to a massive size it can become very difficult to keep track of specific information such as how many copies of a title are owned or which platform a particular game belongs to. Being able to prioritize which games should be played next is also important so that available gaming time isn't wasted and highly rated titles aren't being missed. Additionally, staying on top of newly released games is vital to keeping a collection current and complete. In order to facilitate the necessary level of organization, FinalBoss allows the user to:
+
+- Create a personal database of titles with records stored by name, platform and review score (if available)
+- Interact with the database through creation, modification or deletion of individual records
+- Filter the database by keyword, platform and review score
+- Display a sorted list of the highest rated titles in the collection
+- Search for titles, display screenshots or watch trailers via the RAWG Video Games Database
 
 
 ## Techology
 
-FinalBoss is coded in the Django Python Framework, Javascript, HTML and CSS.
+FinalBoss is coded in the Django Python Framework, Vue.js, HTML and CSS.
 
-The user's collection is stored in an SQLite database and modified directly by Django when creating, updating or deleting titles.
+Access to the features of FinalBoss is only provided to authenticated users. Account creation consists of the selection of a username and password.
 
-Research functionality is provided through API calls to RAWG Video Games Database.
+The user's collection is stored in an SQLite database and modified directly by Django when creating, updating or deleting records.
+
+The data model for the database:
+
+    title = CharField
+    platform = CharField
+    score = IntegerField
 
 
 
