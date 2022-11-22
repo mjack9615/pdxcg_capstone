@@ -2,6 +2,7 @@ from django.db import models
 from django.urls import reverse
 
 class Game(models.Model):
+    username = models.CharField(max_length=50)
     title = models.CharField(max_length=50)
     platform = models.CharField(max_length=50)
     score = models.IntegerField()
