@@ -1,22 +1,18 @@
-# from django.views.generic import ListView
-# from django.views.generic.edit import CreateView
-# from django.contrib.auth.mixins import LoginRequiredMixin
-from django.http import HttpResponse
+from django.views.generic import ListView
+from django.views.generic.edit import CreateView
+from django.contrib.auth.mixins import LoginRequiredMixin
 
-def myview(request):
-    return HttpResponse('hello world!')
+from .models import Game
 
-# from .models import Post
+class ListGames(ListView):
+    model = Game
+    template_name = 'home.html'
 
-# class ListPosts(ListView):
-#     model = Post
-#     template_name = 'home.html'
+class CreateGame(LoginRequiredMixin, CreateView):
+    model = Game
+    template_name = 'post_new.html'
+    fields = ['title', 'platform', 'score']
 
-# class CreatePost(LoginRequiredMixin, CreateView):
-#     model = Post
-#     template_name = 'post_new.html'
-#     fields = ['title', 'body']
-
-#     def form_valid(self, form):
-#         form.instance.author = self.request.user
-#         return super().form_valid(form)
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)

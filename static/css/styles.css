@@ -5,5 +5,9 @@
 }
 
 body {
-    background: url("/pdxcg_capstone/static/images/ganondorf.jpg");
+    background: url("/static/images/ganondorf.jpg");
+}
+
+#title_section, a {
+    color: red;
 }
