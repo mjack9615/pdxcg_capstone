@@ -6,6 +6,7 @@
 
 body {
     background: url("/static/images/ganondorf.jpg");
+    background-size: cover;
 }
 
 #title_section, a {

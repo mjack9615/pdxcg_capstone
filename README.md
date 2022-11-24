@@ -25,6 +25,7 @@ The user's collection is stored in an SQLite database and modified directly by D
 
 The data model for the database:
 
+    owner = models.ForeignKey('auth.User', related_name='games', on_delete=models.CASCADE)
     title = models.CharField(max_length=50)
     platform = models.CharField(max_length=50)
     score = models.IntegerField()
