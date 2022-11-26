@@ -19,6 +19,8 @@
         <a href="{% url 'users:profile' user.username %}">{{user.username}}</a>
 
           <a href="{% url 'logout' %}">Logout</a>
+          <a href="{% url 'games:results' %}">List Games</a>
+          <a href="{% url 'games:new' %}">New Game</a>
           
         {% else%}
           <a href="{% url 'login' %}">Login</a>

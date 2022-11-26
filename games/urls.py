@@ -3,7 +3,7 @@ from . import views
 
 app_name = 'games'
 urlpatterns = [
-    path('', views.ListGames.as_view(), name='home'),
-    path('games/new/', views.CreateGame.as_view(), name='new'),
-    path('games/<int:pk>/', views.ListGames.as_view(), name='home'),
+    path('', views.home, name='home'),
+    path('games/results/', views.ListGames.as_view(), name='results'),
+    path('games/new/', views.CreateGame.as_view(), name='new')
 ]

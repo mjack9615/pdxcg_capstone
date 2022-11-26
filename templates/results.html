@@ -9,14 +9,9 @@
     {% for game in object_list %}
 
     <div>
-        <ul>
-            <li>{{game.title}}</li>
-            <br>
-            <li>{{game.platform}}</li>
-            <br>
-            <li>{{game.score}}</li>
-            <br>
-        </ul>  
+
+        {{game.owner}}, {{game.title}}, {{game.platform}}, {{game.score}}
+
     </div>
 
     {% endfor %}

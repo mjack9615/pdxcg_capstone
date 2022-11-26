@@ -1,12 +1,16 @@
 from django.views.generic import ListView
 from django.views.generic.edit import CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.shortcuts import render
 
 from .models import Game
 
+def home(request):
+    return render(request, 'home.html')
+
 class ListGames(ListView):
     model = Game
-    template_name = 'home.html'
+    template_name = 'results.html'
 
 class CreateGame(LoginRequiredMixin, CreateView):
     model = Game
