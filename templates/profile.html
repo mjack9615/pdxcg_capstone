@@ -1,9 +1,16 @@
 {% extends 'base.html' %}
+{% block additional_styles %}
+<style>
+   body {
+    background-image: url("/static/images/bowser.jpg");
+   }
+</style>
+{% endblock %}
+
 {% block content %}
 
   <div>
     <h1>Profile</h1>
-    <a href="{% url 'games:home' %}">Back</a>
     <p>{{user_profile.username}}</p>
   </div>  
 

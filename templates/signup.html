@@ -1,6 +1,14 @@
 {% extends 'base.html' %}
-{% block content %}
+{% block additional_styles %}
+<style>
+   body {
+    background-image: url("/static/images/mewtwo.jpg");
+   }
+</style>
+{% endblock %}
     
+{% block content %}
+
     <div>
         <h1>Register</h1>
         <form action="" method="post">
