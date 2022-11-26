@@ -1,24 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<a href="{% url 'games:new' %}">New Record</a>
-
-<div>
-  {% for post in object_list %}
-
-    <div>
-      <ul>
-        <li>{{game.title}}</li>
-        <br>
-        <li>{{game.platform}}</li>
-        <br>
-        <li>{{game.score}}</li>
-        <br>
-      </ul>  
-    </div>
-
-  {% endfor %}
-</div>
-
+{% comment %} <a href="{% url 'games:list' %}">List Games</a> {% endcomment %}
+<a href="{% url 'games:new' %}">New Game</a>
 
 {% endblock %}

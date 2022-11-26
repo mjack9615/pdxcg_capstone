@@ -10,8 +10,8 @@ class ListGames(ListView):
 
 class CreateGame(LoginRequiredMixin, CreateView):
     model = Game
-    template_name = 'post_new.html'
-    fields = ['title', 'platform', 'score']
+    template_name = 'new_game.html'
+    fields = ['owner', 'title', 'platform', 'score']
 
     def form_valid(self, form):
         form.instance.author = self.request.user

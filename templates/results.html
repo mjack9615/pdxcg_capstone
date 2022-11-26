@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <div>
+        <h1>Results<h1>
+        <a href="{% url 'games:home' %}">Back</a>
+    </div>    
+    
+    {% for game in object_list %}
+
+    <div>
+        <ul>
+            <li>{{game.title}}</li>
+            <br>
+            <li>{{game.platform}}</li>
+            <br>
+            <li>{{game.score}}</li>
+            <br>
+        </ul>  
+    </div>
+
+    {% endfor %}
+
+{% endblock %}
