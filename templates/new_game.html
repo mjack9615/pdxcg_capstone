@@ -9,13 +9,22 @@
 
 {% block content %}
 
-    <div>
-        <h1>New Game</h1>
-        <form action="" method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <input type="submit" value="Save">
-        </form>
-    </div>
+    <div id="ng_cont">
+        <div id="new_game">
+            <h1>New Game</h1><br>
+            <form action="" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value="Save">
+            </form>
+        </div>
+        <div id="codes">
+            <h4>Platform Codes</h4><br>
+            <ul>
+                <li>xsx - Xbox Series X</li>
+                <li>sw - Nintendo Switch</li>
+            </ul>
+        </div>
+    <div>                    
 
 {% endblock %}

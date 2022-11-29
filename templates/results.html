@@ -9,18 +9,20 @@
 
 {% block content %}
 
-    <div>
-        <h1>Results</h1>
+    <div id="results">
+        <div>
+            <h1>Results</h1>
+        </div>    
+        <br>
+        {% for game in object_list %}
+
+        <div>
+            
+            {{game.owner}}, {{game.title}}, {{game.platform}}, {{game.score}}
+
+        </div>
+
+        {% endfor %}
     </div>    
-    <br>
-    {% for game in object_list %}
-
-    <div>
-
-        {{game.owner}}, {{game.title}}, {{game.platform}}, {{game.score}}
-
-    </div>
-
-    {% endfor %}
 
 {% endblock %}

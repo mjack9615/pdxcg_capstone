@@ -8,9 +8,9 @@
 {% endblock %}
 
 {% block content %}
-    <div>
+    <div id="login_div">
         <form action="" method="post">
-            <h1>Login</h1>
+            <h1>Login</h1><br>
             {% csrf_token %}
             {{ form.as_p }}
             <input type="submit" value="Login">

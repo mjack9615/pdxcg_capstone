@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block additional_styles %}
+<style>
+   body {
+    background-image: url("/static/images/m_bison.jpg");
+   }
+</style>
+{% endblock %}
+
+{% block content %}
+
+    <div id="about">
+        <h1>About</h1>
+        <br>
+        <p>Possessing a large video game collection is fun but also potentially challenging and occasionally frustrating. FinalBoss CRT (Collection & Research Tool) is here to provide the game collector with transparency and a path toward better collection utilization.</p>
+        <br>
+        <p>When a collection grows to a massive size it can become very difficult to keep track of specific information such as how many copies of a title are owned or which platform a particular game belongs to. Being able to prioritize which games should be played next is also important so that available gaming time isn't wasted and highly rated titles aren't missed. Additionally, staying on top of newly released games is vital to keeping a collection current and complete. In order to facilitate the necessary level of organization, FinalBoss allows the user to:</p>
+        <br>
+            <ul>
+                <li> - Create a personal database of titles with records stored by name, platform and review score (if  available)</li>
+                <li> - Interact with the database through creation, modification or deletion of individual records</li>
+                <li> - Filter the database by keyword, platform and review score</li>
+                <li> - Display a sorted list of the highest rated titles in the collection</li>
+                <li> - Search for titles, display screenshots or watch trailers via the RAWG Video Games Database</li>
+            </ul>
+        <br>        
+        <p>FinalBoss is coded in the Django Python Framework, Vue.js, HTML and CSS.</p>
+        <br>
+        <p>Access to the features of FinalBoss is only provided for authenticated users. Account creation consists of the selection of a username and password.</p>
+        <br>    
+        <p>The user's collection is stored in an SQLite database and modified directly by Django when creating, updating or deleting records.</p>    
+    </div>        
+
+{% endblock %}
