@@ -17,7 +17,12 @@ nav {
     background-color: rgb(255, 255, 255, .1);
 }
 
-#login_div, #register_div, #new_game, #profile {
+#profile {
+    margin-left: 3rem;
+    margin-top: 5rem;
+}
+
+#login_div, #register_div, #new_game {
     margin-left: 3rem;
     margin-top: 3rem;
 }
@@ -34,7 +39,6 @@ nav {
 
 #profile {
     margin-left: 75%;
-    margin-top: 5rem;
     justify-content: center;
     background-color: rgb(255, 255, 255, .1);
     width: 20rem; 
@@ -83,19 +87,6 @@ li {
     bottom: 0;
     width: 100%;
     font-size: small;
-}
-
-#ng_cont {
-    display: flex;
-}
-
-#codes {
-    background-color: rgb(255, 255, 255, .1);
-    width: 20rem;
-    border-radius: 10px;
-    padding: 1rem;
-    margin-left: 10rem;
-    margin-top: 3rem;
 }
 
 #title {
