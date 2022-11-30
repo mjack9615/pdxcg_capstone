@@ -2,15 +2,15 @@
 {% block additional_styles %}
 <style>
    body {
-    background-image: url("/static/images/sephiroth.jpg");
+    background-image: url("/static/images/viper.jpg");
    }
 </style>
 {% endblock %}
 
 {% block content %}
 
-    <div id="new_game">
-        <h1>Create New Record</h1><br>
+    <div id="update">
+        <h1>Update Game Record</h1><br>
         <form action="" method="post">
             {% csrf_token %}
             {{ form.as_p }}

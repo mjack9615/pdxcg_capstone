@@ -1,10 +1,19 @@
 {% extends 'base.html' %}
 {% block content %}
 
-    <div id="main">
-        <ul>
-            <li><a href="{% url 'games:results' %}">List Games</a></li><br>
-            <li><a href="{% url 'games:new' %}">New Game</a></li>
-    </div>    
+    {% if user.is_authenticated %}
+        <div id="main">
+            <ul>
+                <li><a href="{% url 'games:all_games' %}">Game Collection Database</a></li><br>
+                <li><a href="{% url 'games:all_games' %}">Filter Collection by Keyword</a></li><br>
+                <li><a href="{% url 'games:all_games' %}">Filter Collection by Platform</a></li><br>
+                <li><a href="{% url 'games:all_games' %}">Filter Collection by Minimum Score</a></li><br>
+                <li><a href="{% url 'games:all_games' %}">Filter Collection by Min Score/Platform </a></li><br>
+                <li><a href="{% url 'games:all_games' %}">Search for Games Online</a></li><br>
+                <li><a href="{% url 'games:all_games' %}">Search for Screenshots Online</a></li><br>
+                <li><a href="{% url 'games:all_games' %}">Search for Trailers Online</a></li>
+            </ul> 
+        </div>    
+    {% endif %}       
 
 {% endblock %}

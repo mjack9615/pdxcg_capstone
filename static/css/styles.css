@@ -22,17 +22,17 @@ nav {
     margin-top: 5rem;
 }
 
-#login_div, #register_div, #new_game {
+#login_div, #register_div, #new_game, #update, #delete {
     margin-left: 3rem;
     margin-top: 3rem;
 }
 
-#results {
+#all_games {
     margin-left: 55rem;
     margin-top: 5rem;
     justify-content: center;
     background-color: rgb(255, 255, 255, .1);
-    width: 30rem; 
+    width: 20rem; 
     border-radius: 10px;
     padding: 1rem;
 } 
@@ -61,7 +61,7 @@ nav {
     margin-top: 5rem;
     justify-content: center;
     background-color: rgb(255, 255, 255, .1);
-    width: 15rem;
+    width: 20rem;
     border-radius: 10px;
     padding: 1rem;
 }
@@ -99,4 +99,8 @@ li {
 
 #login {
     margin-right: 2rem;
+}
+
+#dlt_game {
+    color: red;
 }

@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block additional_styles %}
+<style>
+   body {
+    background-image: url("/static/images/GLaDOS.jpg");
+   }
+</style>
+{% endblock %}
+
+{% block content %}
+
+    <div id="all_games">
+                 
+        <h1>Game Collection</h1><br>
+
+        <li><a href="{% url 'games:new' %}">Create New Record</a></li><br>
+
+        {% for game in object_list %}
+
+            <div>
+
+                {% if user == game.owner %}
+
+                    {{game.title}}, {{game.platform}}, {{game.score}}&nbsp;&nbsp;&nbsp;&nbsp;<a href="{% url 'games:update' game.id %}"><i class="material-icons" style="font-size:14px;">edit</i></a>  <a href="{% url 'games:delete' game.id %}"><i class="material-icons" style="font-size:14px;">delete</i></a>
+
+                {% endif %}   
+
+            </div>
+
+        {% endfor %}
+
+    </div>    
+
+{% endblock %}
