@@ -21,7 +21,7 @@
 
                 {% if user == game.owner %}
 
-                    {{game.title}}, {{game.platform}}, {{game.score}}&nbsp;&nbsp;&nbsp;&nbsp;<a href="{% url 'games:update' game.id %}"><i class="material-icons" style="font-size:14px;">edit</i></a>  <a href="{% url 'games:delete' game.id %}"><i class="material-icons" style="font-size:14px;">delete</i></a>
+                    {{game.title}}, {{game.platform}}, {{game.score}}...<a href="{% url 'games:update' game.id %}"><i class="material-icons" style="font-size:14px;">edit</i></a>  <a href="{% url 'games:delete' game.id %}"><i class="material-icons" style="font-size:14px;">delete</i></a>
 
                 {% endif %}   
 
