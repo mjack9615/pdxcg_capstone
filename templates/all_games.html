@@ -15,19 +15,23 @@ body {
 
         <h3><a href="{% url 'games:new' %}">Create New Record</a></h3><br>
 
-        {% for game in object_list %}
+        <div class="div_sub">
 
-            <div>
+            {% for game in object_list %}
 
-                {% if user == game.owner %}
+                <div>
 
-                    {{game.title}}, {{game.platform}}, {{game.score}}...<a href="{% url 'games:update' game.id %}"><i class="material-icons" style="font-size:14px;">edit</i></a>  <a href="{% url 'games:delete' game.id %}"><i class="material-icons" style="font-size:14px;">delete</i></a>
+                    {% if user == game.owner %}
 
-                {% endif %}   
+                        {{game.title}}, {{game.platform}}, {{game.score}}...<a href="{% url 'games:update' game.id %}"><i class="material-icons" style="font-size:14px;">edit</i></a>  <a href="{% url 'games:delete' game.id %}"><i class="material-icons" style="font-size:14px;">delete</i></a>
 
-            </div>
+                    {% endif %}   
 
-        {% endfor %}
+                </div>
+
+            {% endfor %}
+
+        </div>    
 
     </div>    
 

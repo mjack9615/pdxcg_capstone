@@ -13,11 +13,15 @@ body {
 
         <h1>Score Filter</h1><br>
 
-        {% for i in results %}
+        <div class="div_sub">
 
-            {{ i.title }}, {{ i.platform }}, {{ i.score }}<br>
+            {% for i in results %}
 
-        {% endfor %}
+                {{ i.title }}, {{ i.platform }}, {{ i.score }}<br>
+
+            {% endfor %}
+
+        </div>    
     
     </div>
                 

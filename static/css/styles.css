@@ -9,6 +9,7 @@ body {
     color: lightgoldenrodyellow;
 }
 
+
 nav {
     display: flex;
     height: 3rem;
@@ -28,14 +29,21 @@ nav {
 }
 
 #all_games {
-    margin-left: 55rem;
+    margin-left: 50rem;
     margin-top: 5rem;
     justify-content: center;
     background-color: rgb(255, 255, 255, .1);
     width: 25rem; 
+    height: 35rem;
     border-radius: 10px;
     padding: 1rem;
 } 
+
+.div_sub {
+    overflow: auto;
+    scrollbar-width: thin;
+    height: 25rem;
+}
 
 #kw_filter, #plat_filter, #score_filter, #score_plat_filter {
     margin-left: 55rem;
@@ -93,7 +101,7 @@ li {
     display: flex;
     justify-content: center;
     background-color: rgb(255, 255, 255, .1);
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 100%;
     font-size: small;

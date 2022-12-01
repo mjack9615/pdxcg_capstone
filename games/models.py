@@ -11,7 +11,7 @@ class Game(models.Model):
         return f'{self.title} - {self.platform} - {self.score}'
 
     class Meta:
-        ordering = ['-platform']
+        ordering = ['platform', 'title']
 
     def get_absolute_url(self):
         return reverse('games:home', args=(self.pk,))

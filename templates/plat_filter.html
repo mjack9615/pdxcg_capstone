@@ -13,11 +13,15 @@ body {
 
         <h1>Platform Filter</h1><br>
 
-        {% for i in results %}
+        <div class="div_sub">
 
-            {{ i.title }}, {{ i.score }}<br>
-            
-        {% endfor %}
+            {% for i in results %}
+
+                {{ i.title }}, {{ i.score }}<br>
+                
+            {% endfor %}
+
+        </div>    
     
     </div>
                 
