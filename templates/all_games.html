@@ -1,19 +1,19 @@
 {% extends 'base.html' %}
 {% block additional_styles %}
 <style>
-   body {
+body {
     background-image: url("/static/images/GLaDOS.jpg");
-   }
+}
 </style>
 {% endblock %}
 
 {% block content %}
 
     <div id="all_games">
-                 
+                
         <h1>Game Collection</h1><br>
 
-        <li><a href="{% url 'games:new' %}">Create New Record</a></li><br>
+        <h3><a href="{% url 'games:new' %}">Create New Record</a></h3><br>
 
         {% for game in object_list %}
 

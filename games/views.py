@@ -3,6 +3,8 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
 from django.urls import reverse_lazy
+from django.http import HttpResponse
+from django.template import loader
 
 from .models import Game
 
@@ -19,33 +21,56 @@ class ListGames(ListView):
 class CreateGame(LoginRequiredMixin, CreateView):
     model = Game
     template_name = 'new_game.html'
-    fields = ['owner', 'title', 'platform', 'score']
+    fields = ['title', 'platform', 'score']
+
+    def form_valid(self, form):
+        form.instance.owner = self.request.user
+        return super().form_valid(form)
 
     success_url = reverse_lazy('games:all_games')    
-
-    # def form_valid(self, form):
-    #     form.instance.author = self.request.user
-    #     return super().form_valid(form)
 
 class UpdateGame(LoginRequiredMixin, UpdateView):
     model = Game
     template_name = 'update.html'
-    fields = ['owner', 'title', 'platform', 'score']
+    fields = ['title', 'platform', 'score']
 
     success_url = reverse_lazy('games:all_games')
-
-    # def form_valid(self, form):
-    #     form.instance.author = self.request.user
-    #     return super().form_valid(form)        
 
 class DeleteGame(LoginRequiredMixin, DeleteView):
     model = Game
     template_name = 'delete.html'
-    fields = ['owner', 'title', 'platform', 'score']
+    fields = ['title', 'platform', 'score']
 
     success_url = reverse_lazy('games:all_games')
 
+def kw_filter(request):
+        results = Game.objects.filter(title__contains='mario').values()
+        template = loader.get_template('kw_filter.html')
+        context = {
+            'results': results,
+        }
+        return HttpResponse(template.render(context, request))
 
-    # def form_valid(self, form):
-    #     form.instance.author = self.request.user
-    #     return super().form_valid(form)    
+def plat_filter(request):
+        results = Game.objects.filter(platform__exact='xsx').values()
+        template = loader.get_template('plat_filter.html')
+        context = {
+            'results': results,
+        }
+        return HttpResponse(template.render(context, request))
+
+def score_filter(request):
+        results = Game.objects.filter(score__gte='90').values()
+        template = loader.get_template('score_filter.html')
+        context = {
+            'results': results,
+        }
+        return HttpResponse(template.render(context, request))
+
+def score_plat_filter(request):
+        results = Game.objects.filter(platform__exact='win', score__gte='90').values()
+        template = loader.get_template('score_plat_filter.html')
+        context = {
+            'results': results,
+        }
+        return HttpResponse(template.render(context, request))       

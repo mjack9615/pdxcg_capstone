@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 {% block additional_styles %}
 <style>
-   body {
+body {
     background-image: url("/static/images/sephiroth.jpg");
-   }
+}
 </style>
 {% endblock %}
 
@@ -11,11 +11,13 @@
 
     <div id="new_game">
         <h1>Create New Record</h1><br>
-        <form action="" method="post">
+        <form action="{% url 'games:new' %}" method="post">
             {% csrf_token %}
-            {{ form.as_p }}
+            <input type='text' placeholder='title' name='title'>
+            <input type='text' placeholder='platform' name='platform'>
+            <input type='number' placeholder='score' name='score' >
             <input type="submit" value="Save">
         </form>
     </div>
-                  
+                
 {% endblock %}

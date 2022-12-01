@@ -1,40 +1,40 @@
 {% load static %}
 {% block additional_styles %}
 <style>
-   body {
+    body {
     background: url("/static/images/ganondorf.jpg");
-   }
+    }
 </style>
 {% endblock %}
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
+<head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <title>FinalBoss CRT</title>
-  </head>
-  <body>
+</head>
+<body>
     <nav>
-      <div id="title">
+    <div id="title">
         <h1><a href="{% url 'games:home' %}">FinalBoss CRT</a></h1>
-      </div>
-      <div id="subtitle">  
+    </div>
+    <div id="subtitle">  
         <h4><a href="{% url 'games:about' %}">'herder of chaos...slayer of backlogs'</h4>
-      </div>
-      <div id="login">
+    </div>
+    <div id="login">
         {% if user.is_authenticated %}
 
-          <a href="{% url 'users:profile' user.username %}">{{user.username}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <a href="{% url 'logout' %}">Logout</a>
-          
+        <a href="{% url 'users:profile' user.username %}">{{user.username}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="{% url 'logout' %}">Logout</a>
+        
         {% else%}
-          <a href="{% url 'login' %}">Login</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <a href="{% url 'users:signup' %}">Register</a>
+        <a href="{% url 'login' %}">Login</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="{% url 'users:signup' %}">Register</a>
         
         {% endif %}
-      </div>
+    </div>
     </nav>
 
     {% block content %}
@@ -42,5 +42,5 @@
 
     <footer id="footer">Copyright © 2022&nbsp;<a href="https://www.linkedin.com/in/michael-jackson-pdx71/">Michael J. Jackson</a></footer>
 
-  </body>
+</body>
 </html>

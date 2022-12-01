@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block additional_styles %}
+<style>
+body {
+    background-image: url("/static/images/GLaDOS.jpg");
+}
+</style>
+{% endblock %}
+
+{% block content %}
+
+    <div id="score_plat_filter">
+
+        <h1>Score by Platform Filter</h1><br>
+
+        {% for i in results %}
+
+            {{ i.title }}, {{ i.platform }}, {{ i.score }}<br>
+
+        {% endfor %}
+    
+    </div>
+                
+{% endblock %}
