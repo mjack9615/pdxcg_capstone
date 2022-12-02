@@ -3,8 +3,8 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
 from django.urls import reverse_lazy
-from django.http import HttpResponse
-from django.template import loader
+# from django.http import HttpResponse
+# from django.template import loader
 
 from .models import Game
 
@@ -42,35 +42,3 @@ class DeleteGame(LoginRequiredMixin, DeleteView):
     fields = ['title', 'platform', 'score']
 
     success_url = reverse_lazy('games:all_games')
-
-def kw_filter(request):
-        results = Game.objects.filter(title__contains='mario').values()
-        template = loader.get_template('kw_filter.html')
-        context = {
-            'results': results,
-        }
-        return HttpResponse(template.render(context, request))
-
-def plat_filter(request):
-        results = Game.objects.filter(platform__exact='xsx').values()
-        template = loader.get_template('plat_filter.html')
-        context = {
-            'results': results,
-        }
-        return HttpResponse(template.render(context, request))
-
-def score_filter(request):
-        results = Game.objects.filter(score__gte='90').values()
-        template = loader.get_template('score_filter.html')
-        context = {
-            'results': results,
-        }
-        return HttpResponse(template.render(context, request))
-
-def score_plat_filter(request):
-        results = Game.objects.filter(platform__exact='win', score__gte='90').values()
-        template = loader.get_template('score_plat_filter.html')
-        context = {
-            'results': results,
-        }
-        return HttpResponse(template.render(context, request))       
