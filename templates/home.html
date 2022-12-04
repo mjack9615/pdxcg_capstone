@@ -9,9 +9,9 @@
                 <li><a href="{% url 'games:all_games' %}">Filter Collection by Platform</a></li><br>
                 <li><a href="{% url 'games:all_games' %}">Filter Collection by Minimum Score</a></li><br>
                 <li><a href="{% url 'games:all_games' %}">Filter Collection by Score/Platform </a></li><br>
-                <li><a href="{% url 'games:all_games' %}">Search for Games Online</a></li><br>
-                <li><a href="{% url 'games:all_games' %}">Search for Screenshots Online</a></li><br>
-                <li><a href="{% url 'games:all_games' %}">Search for Trailers Online</a></li>
+                <li><a href="{% url 'games:api_kw' %}">Search for Games Online</a></li><br>
+                <li><a href="{% url 'games:api_ss' %}">Search for Screenshots Online</a></li><br>
+                <li><a href="{% url 'games:api_tr' %}">Search for Trailers Online</a></li>
             </ul> 
         </div>    
     {% endif %}       

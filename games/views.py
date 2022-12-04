@@ -3,8 +3,6 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
 from django.urls import reverse_lazy
-# from django.http import HttpResponse
-# from django.template import loader
 
 from .models import Game
 
@@ -13,6 +11,15 @@ def home(request):
 
 def about(request):
     return render(request, 'about.html') 
+
+def api_kw(request):
+    return render(request, 'api_kw.html')
+
+def api_ss(request):
+    return render(request, 'api_ss.html')
+
+def api_tr(request):
+    return render(request, 'api_tr.html')            
 
 class ListGames(ListView):
     model = Game

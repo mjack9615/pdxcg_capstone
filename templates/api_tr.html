@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block additional_styles %}
+<style>
+body {
+    background-image: url("/static/images/akuma.jpg");
+}
+</style>
+{% endblock %}
+
+{% block content %}
+
+    <div id="api_tr">
+
+        <h1>Trailer Search</h1><br>
+
+        <input id="tr_input" type="text" placeholder="Enter search term"><br><br>
+
+        <button onclick="getTr()">Search</button><br><br>
+
+        <div class="div_sub" id="api_tr_sub">
+
+        </div>   
+    
+    </div>
+                
+{% endblock %}
