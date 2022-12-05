@@ -41,7 +41,7 @@ nav {
 
 .div_sub {
     overflow: auto;
-    scrollbar-width: thin;
+    scrollbar-width: none;
     height: 25rem;
 }
 

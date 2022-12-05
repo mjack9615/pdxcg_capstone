@@ -13,7 +13,26 @@ body {
 
         <h1>Score by Platform Filter</h1><br>
 
+        <form action="{% url 'games:score_plat_filter' %}" method="get">
+            <input name="plat" type="text" placeholder="Enter platform">
+            <input name="score" type="number" placeholder="Enter minimum score">
+        </form><br>
+
         <div class="div_sub">
+
+            {% for game in object_list %}
+
+                <div>
+
+                    {% if user == game.owner %}
+
+                        {{ game.title }}, {{ game.platform }}, {{ game.score }}...<a href="{% url 'games:update' game.id %}"><i class="material-icons" style="font-size:14px;">edit</i></a>  <a href="{% url 'games:delete' game.id %}"><i class="material-icons" style="font-size:14px;">delete</i></a>
+
+                    {% endif %}   
+
+                </div>
+
+            {% endfor %}
 
         </div>    
     

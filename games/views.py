@@ -3,6 +3,7 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
 from django.urls import reverse_lazy
+from django.db.models import Q
 
 from .models import Game
 
@@ -25,6 +26,43 @@ class ListGames(ListView):
     model = Game
     template_name = 'all_games.html'
 
+class KeywordFilter(ListView):
+    model = Game
+    template_name = "kw_filter.html"
+
+    def get_queryset(self): 
+        query = self.request.GET.get("kw", default="")
+        object_list = Game.objects.filter(title__contains=query)
+        return object_list    
+
+class PlatformFilter(ListView):
+    model = Game
+    template_name = "plat_filter.html"
+
+    def get_queryset(self): 
+        query = self.request.GET.get("plat", default="")
+        object_list = Game.objects.filter(platform__exact=query)
+        return object_list            
+
+class ScoreFilter(ListView):
+    model = Game
+    template_name = "score_filter.html"
+
+    def get_queryset(self): 
+        query = self.request.GET.get("score", default=0)
+        object_list = Game.objects.filter(score__gte=query)
+        return object_list
+
+class ScorePlatFilter(ListView):
+    model = Game
+    template_name = "score_plat_filter.html"
+
+    def get_queryset(self):
+        query = self.request.GET.get("plat", default="") 
+        query = self.request.GET.get("plat_score", default=0)
+        object_list = Game.objects.filter(Q(platform__exact=query) & Q(score__gte=query))
+        return object_list
+  
 class CreateGame(LoginRequiredMixin, CreateView):
     model = Game
     template_name = 'new_game.html'
