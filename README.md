@@ -17,7 +17,7 @@ When a collection grows to a massive size it can become very difficult to keep t
 
 ## Techology
 
-FinalBoss is coded in the Django Python Framework, Vue.js, HTML and CSS.
+FinalBoss is coded in the Django Python Framework, Javascript, HTML and CSS.
 
 Access to the features of FinalBoss is only provided for authenticated users. Account creation consists of the selection of a username and password.
 

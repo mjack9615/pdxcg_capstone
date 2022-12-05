@@ -58,9 +58,9 @@ class ScorePlatFilter(ListView):
     template_name = "score_plat_filter.html"
 
     def get_queryset(self):
-        query = self.request.GET.get("plat", default="") 
-        query = self.request.GET.get("plat_score", default=0)
-        object_list = Game.objects.filter(Q(platform__exact=query) & Q(score__gte=query))
+        query1 = self.request.GET.get("plat", default="") 
+        query2 = self.request.GET.get("score", default=0)
+        object_list = Game.objects.filter(Q(platform__exact=query1) & Q(score__gte=query2))
         return object_list
   
 class CreateGame(LoginRequiredMixin, CreateView):
