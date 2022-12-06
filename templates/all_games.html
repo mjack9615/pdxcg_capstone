@@ -15,6 +15,8 @@ body {
 
         <h3><a href="{% url 'games:new' %}">Create New Record</a></h3><br>
 
+        <h4><a href="{% url 'games:csv_upload' %}">Upload CSV</a></h4><br>
+
         <div class="div_sub">
 
             {% for game in object_list %}

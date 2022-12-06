@@ -15,5 +15,6 @@ urlpatterns = [
     path('games/score_plat_filter/', views.ScorePlatFilter.as_view(), name='score_plat_filter'),
     path('games/api_kw', views.api_kw, name='api_kw'),
     path('games/api_ss', views.api_ss, name='api_ss'),
-    path('games/api_tr', views.api_tr, name='api_tr')
+    path('games/api_tr', views.api_tr, name='api_tr'),
+    path('games/csv_upload', views.csv_upload, name='csv_upload')
 ]
