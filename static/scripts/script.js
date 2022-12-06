@@ -13,7 +13,7 @@ function getKw() {
 	.then((response) => response.json())
 	.then((data) => {
 		for (let i = 0; i < data.results.length; i++) {
-			api_kw.innerHTML += data.results[i].name + ", " + data.results[i].platforms[0].platform.name + ", " + data.results[i].metacritic
+			api_kw.innerHTML += "<br>" + data.results[i].name + ", " + data.results[i].platforms[0].platform.name + ", " + data.results[i].metacritic
 		}	
 	})
 }	
@@ -25,7 +25,7 @@ function getSs() {
 	.then((response) => response.json())
 	.then((data) => {
 		for (let i = 0; i < data.results.length; i++) {
-			api_ss.innerHTML += data.results[i].image
+			api_ss.innerHTML += "<br>" + "<a href='"  + data.results[i].image + "'>" + data.results[i].image + "</a>"
 		}	
 	})
 }	
@@ -37,7 +37,7 @@ function getTr() {
 	.then((response) => response.json())
 	.then((data) => {
 		for (let i = 0; i < data.results.length; i++) {
-			api_tr.innerHTML += data['results'][i]['data']['480']
+			api_tr.innerHTML += "<br>" + "<a href='" + data['results'][i]['data']['480'] + "'>" + data['results'][i]['data']['480'] + "</a>"
 		}	
 	})
 }	
