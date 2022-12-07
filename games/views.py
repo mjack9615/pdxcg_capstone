@@ -114,7 +114,7 @@ def csv_upload(request):
             title=column[0],
             platform=column[1],
             score=column[2],
-            owner_id=column[3]
+            owner_id=request.user.id
         )
     context = {}
-    return render(request, template, context)    
+    return render(request, template, context)  
