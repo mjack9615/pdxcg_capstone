@@ -22,7 +22,15 @@ def api_ss(request):
     return render(request, 'api_ss.html')
 
 def api_tr(request):
-    return render(request, 'api_tr.html')            
+    return render(request, 'api_tr.html')  
+
+def stats(request):
+    
+    count = Game.objects.all().count()
+
+    context= {'count': count}
+        
+    return render(request, 'stats.html', context)              
 
 class ListGames(ListView):
     model = Game
@@ -44,7 +52,7 @@ class PlatformFilter(ListView):
     def get_queryset(self): 
         query = self.request.GET.get("plat", default="")
         object_list = Game.objects.filter(platform__exact=query)
-        return object_list            
+        return object_list    
 
 class ScoreFilter(ListView):
     model = Game

@@ -10,9 +10,10 @@ body {
 {% block content %}
 
 <div id="profile">
-	<h1>Profile</h1>
-	<p>{{user_profile.username}}</p><br>
-	<h3><a href="{% url 'games:stats' %}">Collection Stats</a></h3><br>
+	<h1>Collection Stats</h1><br>
+
+    Games: {{ count }}
+    
 </div>
 
 {% endblock %}
