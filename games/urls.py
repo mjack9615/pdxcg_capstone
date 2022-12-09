@@ -17,5 +17,5 @@ urlpatterns = [
     path('games/api_ss/', views.api_ss, name='api_ss'),
     path('games/api_tr/', views.api_tr, name='api_tr'),
     path('games/csv_upload/', views.csv_upload, name='csv_upload'),
-    path('games//', views.stats, name='stats')
+    path('games/stats/', views.stats, name='stats')
 ]

@@ -10,8 +10,10 @@ body {
 {% block content %}
 
 <div id="profile">
-	<h1>Profile</h1>
-	<p>{{user_profile.username}}</p><br>
+	<h1>Profile</h1><br>
+	<p>Username: {{user_profile.username}}</p><br>
+	<p>Date joined: {{user_profile.date_joined}}<p><br>
+	<p>Date last visited: {{user_profile.last_login}}<p><br><br>	
 	<h3><a href="{% url 'games:stats' %}">Collection Stats</a></h3><br>
 </div>
 

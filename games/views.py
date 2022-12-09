@@ -27,8 +27,19 @@ def api_tr(request):
 def stats(request):
     
     count = Game.objects.all().count()
+     
+    plat_count = []
 
-    context= {'count': count}
+    platforms = Game.objects.values("platform")
+
+    for platform in platforms:
+        if platform not in plat_count:
+            plat_count.append(platform)
+
+    plat_count = len(plat_count)
+
+    context= {'count': count,
+            'plat_count': plat_count}
         
     return render(request, 'stats.html', context)              
 
