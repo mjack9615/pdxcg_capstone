@@ -9,12 +9,23 @@ body {
 
 {% block content %}
 
-<div id="profile">
-	<h1>Collection Stats</h1><br>
+	<div id="stats">
 
-    Games: {{ count }}<br><br>
-	Platforms: {{ plat_count }}
-    
-</div>
+		<h1>Collection Stats</h1><br>
+
+		<div class="div_sub">
+
+			Games: {{ count }}<br><br>
+			Platforms: {{ plat_count }}<br><br>
+			
+			{% for format in formats %}
+
+				{{ format.platform }}<br>
+
+			{% endfor %}
+
+		</div>	
+		
+	</div>
 
 {% endblock %}

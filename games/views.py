@@ -25,10 +25,12 @@ def api_tr(request):
     return render(request, 'api_tr.html')  
 
 def stats(request):
-    
+
     count = Game.objects.all().count()
      
     plat_count = []
+
+    formats = []
 
     platforms = Game.objects.values("platform")
 
@@ -36,10 +38,15 @@ def stats(request):
         if platform not in plat_count:
             plat_count.append(platform)
 
+    for platform in plat_count:
+        formats.append(platform)
+
     plat_count = len(plat_count)
 
-    context= {'count': count,
-            'plat_count': plat_count}
+    context = {'count': count,
+            'plat_count': plat_count,
+            'formats': formats
+            }
         
     return render(request, 'stats.html', context)              
 
