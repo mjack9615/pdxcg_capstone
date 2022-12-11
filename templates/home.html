@@ -18,7 +18,7 @@
     {% else %} 
     
         <div id="landing">
-            <h4>Please login or register to begin managing your personal game collection with FinalBoss</h4>
+            <h4>Please <a href="{% url 'login' %}">login</a> or <a href="{% url 'users:signup' %}">register</a> to begin managing your personal game collection with FinalBoss</h4>
         </div>
 
     {% endif %}       
