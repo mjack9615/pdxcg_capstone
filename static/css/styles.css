@@ -93,7 +93,7 @@ nav {
     margin-top: 5rem;
 }
 
-#main {
+#landing, #main {
     display: flex;
     margin-left: 75%;
     margin-top: 5rem;
@@ -132,7 +132,7 @@ li {
 }
 
 #subtitle {
-    margin-left: 13rem;
+    margin-left: 2rem;
 }
 
 #login {
