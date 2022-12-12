@@ -93,7 +93,18 @@ nav {
     margin-top: 5rem;
 }
 
-#landing, #main {
+#landing {
+    display: flex;
+    margin-left: 75%;
+    margin-top: 8rem;
+    justify-content: center;
+    background-color: rgb(255, 255, 255, .1);
+    width: 18rem;
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+#main {
     display: flex;
     margin-left: 75%;
     margin-top: 5rem;
@@ -128,10 +139,6 @@ li {
 }
 
 #title {
-    margin-left: 2rem;
-}
-
-#subtitle {
     margin-left: 2rem;
 }
 
