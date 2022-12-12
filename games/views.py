@@ -32,6 +32,12 @@ def stats(request):
 
     formats = []
 
+    formats_list = []
+
+    game_count = []
+
+    format_gamelist = []
+
     platforms = Game.objects.values("platform")
 
     for platform in platforms:
@@ -41,13 +47,22 @@ def stats(request):
     for platform in plat_count:
         formats.append(platform)
 
+    for format in formats:
+        game_array = Game.objects.filter(platform=format["platform"])
+        game_count.append(len(game_array))
+        formats_list.append(format["platform"])
+
+    format_gamelist = {formats_list[i]: game_count[i] for i in range(len(formats_list))}
+
+    result = list(format_gamelist.items())
+
     plat_count = len(plat_count)
 
     context = {'count': count,
             'plat_count': plat_count,
-            'formats': formats
+            'result': result
             }
-        
+
     return render(request, 'stats.html', context)              
 
 class ListGames(ListView):

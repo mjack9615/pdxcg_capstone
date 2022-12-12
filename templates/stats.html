@@ -18,11 +18,11 @@ body {
 			Games: {{ count }}<br><br>
 			Platforms: {{ plat_count }}<br><br>
 			
-			{% for format in formats %}
+			{% for i in result %}
 
-				{{ format.platform }}<br>
+				{{ i }}<br>
 
-			{% endfor %}
+			{% endfor %}	
 
 		</div>	
 		
